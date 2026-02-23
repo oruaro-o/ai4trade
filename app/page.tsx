@@ -4,10 +4,13 @@ export default function Home() {
   return (
     <div className="flex flex-col h-dvh">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 lg:px-8 h-20 border-b border-border shrink-0">
-        <span className="text-3xl font-bold tracking-tight">
-          Tariff Classifier
-        </span>
+      <header className="flex items-center justify-between px-6 lg:px-8 h-28 border-b border-border shrink-0">
+        <div className="flex flex-col">
+          <span className="text-3xl font-bold tracking-tight">
+            Tariff Classifier
+          </span>
+          <span className="text-lg text-muted-foreground">🇮🇳 ➡ 🇺🇸</span>
+        </div>
       </header>
 
       {/* Main content */}
