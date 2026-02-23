@@ -9,6 +9,7 @@ interface ResultCardProps {
 
 export function ResultCard({ result }: ResultCardProps) {
   const isRecommended = result.rank === 1;
+  const isWorst = result.rank === 5;
   const confidencePercent = Math.round(result.confidence * 100);
 
   return (
@@ -17,12 +18,18 @@ export function ResultCard({ result }: ResultCardProps) {
         "relative border rounded-lg p-5 transition-colors",
         isRecommended
           ? "border-foreground/20 bg-foreground/[0.02]"
+          : isWorst
+          ? "border-red-200 bg-red-50/40"
           : "border-border"
       )}
     >
       {/* Accent left border for recommended */}
       {isRecommended && (
         <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-foreground/40 rounded-full" />
+      )}
+      {/* Accent left border for worst */}
+      {isWorst && (
+        <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-red-300 rounded-full" />
       )}
 
       <div className="flex items-start justify-between gap-4">
@@ -46,7 +53,7 @@ export function ResultCard({ result }: ResultCardProps) {
                 {result.htsCode}
               </code>
               {isRecommended && (
-                <span className="text-[11px] font-medium text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+                <span className="text-[11px] font-medium text-[#1e6b3a] bg-[#e6f4ea] px-1.5 py-0.5 rounded">
                   Recommended
                 </span>
               )}
