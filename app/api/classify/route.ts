@@ -103,10 +103,10 @@ Rules:
 
 function buildUserMessage(htsContext: string): string {
   if (!htsContext) {
-    return "Please analyze the image above and classify this good using your knowledge of the HTS.";
+    return "Please analyze the image above and classify this good using your knowledge of the HTS. The goods are being transported from India to the US directly.";
   }
   return (
-    "Please analyze the image above and classify this good using the HTS reference below.\n\n" +
+    "Please analyze the image above and classify this good using the HTS reference below. The goods are being transported from India to the US directly.\n\n" +
     "--- HTS REFERENCE ---\n" +
     htsContext +
     "\n--- END HTS REFERENCE ---"
